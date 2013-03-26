@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @scotch.name %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @scotch.country %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%= @scotch.region %>
+</p>
+
+<p>
+  <b>Distillery:</b>
+  <%= @scotch.distillery %>
+</p>
+
+<p>
+  <b>Bottler:</b>
+  <%= @scotch.bottler %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @scotch.age %>
+</p>
+
+<p>
+  <b>Style:</b>
+  <%= @scotch.style %>
+</p>
+
+<p>
+  <b>Alcohol:</b>
+  <%= @scotch.alcohol %>
+</p>
+
+<p>
+  <b>Volume:</b>
+  <%= @scotch.volume %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @scotch.description %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= join_tags(@scotch) %>
+</p>
+
+<h4>Comments</h4>
+<%= render @scotch.comments %>
+
+<h4>Add a comment:</h4>
+<%= render "comments/form" %>
+ 
+<br />
+
+
+<%= link_to 'Edit', edit_scotch_path(@scotch) %> |
+<%= link_to 'Back', scotches_path %>

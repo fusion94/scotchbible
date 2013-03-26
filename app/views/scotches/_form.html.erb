@@ -1,0 +1,61 @@
+<% @scotch.tags.build %>
+<%= form_for(@scotch) do |f| %>
+  <% if @scotch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scotch.errors.count, "error") %> prohibited this scotch from being saved:</h2>
+
+      <ul>
+      <% @scotch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :region %><br />
+    <%= f.text_field :region %>
+  </div>
+  <div class="field">
+    <%= f.label :distillery %><br />
+    <%= f.text_field :distillery %>
+  </div>
+  <div class="field">
+    <%= f.label :bottler %><br />
+    <%= f.text_field :bottler %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :style %><br />
+    <%= f.text_field :style %>
+  </div>
+  <div class="field">
+    <%= f.label :alcohol %><br />
+    <%= f.text_field :alcohol %>
+  </div>
+  <div class="field">
+    <%= f.label :volume %><br />
+    <%= f.text_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+    <h4>Tags</h4>
+  <%= render :partial => 'tags/form',
+             :locals => {:form => f} %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

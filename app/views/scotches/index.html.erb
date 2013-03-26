@@ -1,0 +1,31 @@
+<h1>Browsing Scotches</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Country</th>
+    <th>Region</th>
+    <th>Distillery</th>
+    <th>Age</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @scotches.each do |scotch| %>
+  <tr>
+    <td><%= scotch.name %></td>
+    <td><%= scotch.country %></td>
+    <td><%= scotch.region %></td>
+    <td><%= scotch.distillery %></td>
+    <td><%= scotch.age %></td>
+    <td><%= link_to 'Show', scotch %></td>
+    <td><%= link_to 'Edit', edit_scotch_path(scotch) %></td>
+    <td><%= link_to 'Destroy', scotch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Scotch', new_scotch_path %>
