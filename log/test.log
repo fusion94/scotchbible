@@ -1,0 +1,165 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "comments"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("commenter", "body", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2013-03-26 20:27:14', '2013-03-26 20:27:14', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "comments" ("commenter", "body", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2013-03-26 20:27:14', '2013-03-26 20:27:14', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "scotches"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "scotches" ("name", "country", "region", "distillery", "bottler", "age", "style", "alcohol", "volume", "description", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyText', '2013-03-26 20:27:14', '2013-03-26 20:27:14', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "scotches" ("name", "country", "region", "distillery", "bottler", "age", "style", "alcohol", "volume", "description", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyText', '2013-03-26 20:27:14', '2013-03-26 20:27:14', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "tags"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2013-03-26 20:27:14', '2013-03-26 20:27:14', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2013-03-26 20:27:14', '2013-03-26 20:27:14', 298486374)
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mScotch Load (1.4ms)[0m  [1mSELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scotches" 
+Processing by ScotchesController#create as HTML
+  Parameters: {"scotch"=>{"age"=>"MyString", "alcohol"=>"MyString", "bottler"=>"MyString", "country"=>"MyString", "description"=>"MyText", "distillery"=>"MyString", "name"=>"MyString", "region"=>"MyString", "style"=>"MyString", "volume"=>"MyString"}}
+Filter chain halted as #<Proc:0x007fd0d4725428@/Users/tguntharp/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.12/lib/action_controller/metal/http_authentication.rb:112> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scotches" [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mScotch Load (0.1ms)[0m  SELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "scotches" [0m
+Processing by ScotchesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+Filter chain halted as #<Proc:0x007fd0d4725428@/Users/tguntharp/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.12/lib/action_controller/metal/http_authentication.rb:112> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scotches" 
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mScotch Load (0.1ms)[0m  [1mSELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ScotchesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+Filter chain halted as #<Proc:0x007fd0d4725428@/Users/tguntharp/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.12/lib/action_controller/metal/http_authentication.rb:112> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mScotch Load (0.1ms)[0m  SELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ScotchesController#index as HTML
+  [1m[36mScotch Load (0.1ms)[0m  [1mSELECT "scotches".* FROM "scotches" [0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mScotch Load (0.1ms)[0m  SELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ScotchesController#new as HTML
+Filter chain halted as #<Proc:0x007fd0d4725428@/Users/tguntharp/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.12/lib/action_controller/metal/http_authentication.rb:112> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mScotch Load (0.1ms)[0m  [1mSELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ScotchesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mScotch Load (0.0ms)[0m  SELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."scotch_id" = 980190962[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."scotch_id" = 980190962
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (47.0ms)
+Completed 200 OK in 77ms (Views: 76.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mScotch Load (0.1ms)[0m  [1mSELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ScotchesController#update as HTML
+  Parameters: {"scotch"=>{"age"=>"MyString", "alcohol"=>"MyString", "bottler"=>"MyString", "country"=>"MyString", "description"=>"MyText", "distillery"=>"MyString", "name"=>"MyString", "region"=>"MyString", "style"=>"MyString", "volume"=>"MyString"}, "id"=>"980190962"}
+Filter chain halted as #<Proc:0x007fd0d4725428@/Users/tguntharp/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.12/lib/action_controller/metal/http_authentication.rb:112> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "comments"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("commenter", "body", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2013-03-26 20:30:37', '2013-03-26 20:30:37', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "comments" ("commenter", "body", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2013-03-26 20:30:37', '2013-03-26 20:30:37', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "scotches"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "scotches" ("name", "country", "region", "distillery", "bottler", "age", "style", "alcohol", "volume", "description", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyText', '2013-03-26 20:30:37', '2013-03-26 20:30:37', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "scotches" ("name", "country", "region", "distillery", "bottler", "age", "style", "alcohol", "volume", "description", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyText', '2013-03-26 20:30:37', '2013-03-26 20:30:37', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "tags"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2013-03-26 20:30:37', '2013-03-26 20:30:37', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2013-03-26 20:30:37', '2013-03-26 20:30:37', 298486374)
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mScotch Load (1.7ms)[0m  [1mSELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scotches" 
+Processing by ScotchesController#create as HTML
+  Parameters: {"scotch"=>{"age"=>"MyString", "alcohol"=>"MyString", "bottler"=>"MyString", "country"=>"MyString", "description"=>"MyText", "distillery"=>"MyString", "name"=>"MyString", "region"=>"MyString", "style"=>"MyString", "volume"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "scotches" ("age", "alcohol", "bottler", "country", "created_at", "description", "distillery", "name", "region", "style", "updated_at", "volume") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["age", "MyString"], ["alcohol", "MyString"], ["bottler", "MyString"], ["country", "MyString"], ["created_at", Tue, 26 Mar 2013 20:30:37 UTC +00:00], ["description", "MyText"], ["distillery", "MyString"], ["name", "MyString"], ["region", "MyString"], ["style", "MyString"], ["updated_at", Tue, 26 Mar 2013 20:30:37 UTC +00:00], ["volume", "MyString"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/scotches/980190963
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scotches" 
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mScotch Load (0.1ms)[0m  [1mSELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scotches" 
+Processing by ScotchesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mScotch Load (0.1ms)[0m  [1mSELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."scotch_id" = 980190962[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "scotches" WHERE "scotches"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/scotches
+Completed 302 Found in 22ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "scotches" 
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mScotch Load (0.1ms)[0m  [1mSELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ScotchesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mScotch Load (0.0ms)[0m  SELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."scotch_id" = 980190962[0m
+  Rendered tags/_form.html.erb (1.6ms)
+  Rendered scotches/_form.html.erb (53.6ms)
+Completed 200 OK in 61ms (Views: 59.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mScotch Load (0.1ms)[0m  SELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ScotchesController#index as HTML
+  [1m[36mScotch Load (0.1ms)[0m  [1mSELECT "scotches".* FROM "scotches" [0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mScotch Load (0.1ms)[0m  SELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ScotchesController#new as HTML
+  Rendered tags/_form.html.erb (0.3ms)
+  Rendered scotches/_form.html.erb (4.5ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mScotch Load (0.1ms)[0m  [1mSELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ScotchesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mScotch Load (0.0ms)[0m  SELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."scotch_id" = 980190962[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."scotch_id" = 980190962
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (9.3ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mScotch Load (0.1ms)[0m  [1mSELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ScotchesController#update as HTML
+  Parameters: {"scotch"=>{"age"=>"MyString", "alcohol"=>"MyString", "bottler"=>"MyString", "country"=>"MyString", "description"=>"MyText", "distillery"=>"MyString", "name"=>"MyString", "region"=>"MyString", "style"=>"MyString", "volume"=>"MyString"}, "id"=>"980190962"}
+  [1m[35mScotch Load (0.1ms)[0m  SELECT "scotches".* FROM "scotches" WHERE "scotches"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/scotches/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
